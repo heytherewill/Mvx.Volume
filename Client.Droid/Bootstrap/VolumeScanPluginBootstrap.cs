@@ -1,10 +1,7 @@
-﻿using System;
+﻿using MvvmCross.Platform.Plugins;
+
 namespace Client.Droid.Bootstrap
 {
-    public class FlashlightScanPluginBootstrap
-    {
-        public FlashlightScanPluginBootstrap()
-        {
-        }
-    }
+    public class VolumeScanPluginBootstrap
+        : MvxLoaderPluginBootstrapAction<Volume.PluginLoader, Volume.Droid.Plugin> { }
 }

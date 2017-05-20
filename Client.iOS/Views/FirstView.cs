@@ -1,25 +1,24 @@
-﻿using System;
-
-using UIKit;
+﻿using Client.Core.ViewModels;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.iOS.Views;
 
 namespace Client.iOS.Views
 {
-    public partial class FirstView : UIViewController
+    public partial class FirstView : MvxViewController
     {
-        public FirstView() : base("FirstView", null)
+        public FirstView() 
+            : base("FirstView", null)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-        }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            var bindingSet = this.CreateBindingSet<FirstView, FirstViewModel>();
+            bindingSet.Bind(Percentage).To(vm => vm.Percentage);
+            bindingSet.Bind(Mute).To(vm => vm.MuteCommand);
+            bindingSet.Apply();
         }
     }
 }

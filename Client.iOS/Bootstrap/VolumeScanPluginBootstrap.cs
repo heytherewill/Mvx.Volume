@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Platform.Plugins;
 
-namespace Client.Droid.Bootstrap
+namespace Client.iOS.Bootstrap
 {
     public class VolumeScanPluginBootstrap
-        : MvxLoaderPluginBootstrapAction<Volume.PluginLoader, Volume.Droid.Plugin> { }
+        : MvxLoaderPluginBootstrapAction<Volume.PluginLoader, Volume.iOS.Plugin> { }
 }
