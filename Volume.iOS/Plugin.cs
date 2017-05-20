@@ -1,10 +1,9 @@
-﻿using System;
+﻿using MvvmCross.Platform.Plugins;
+
 namespace Volume.iOS
 {
-    public class MyClass
+    public class Plugin : IMvxPlugin
     {
-        public MyClass()
-        {
-        }
+        public void Load() => VolumeService.Initialize();
     }
 }

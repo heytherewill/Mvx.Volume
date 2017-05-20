@@ -1,13 +1,19 @@
-﻿namespace Volume
+﻿using System;
+
+namespace Volume
 {
-    public interface IVolumeService
+    public abstract class BaseVolumeService : IVolumeService
     {
-        void Mute();
+        protected abstract void NativeSet(int percentage);
 
-        void Increase();
+        public void Mute() => Set(0);
 
-        void Decrease();
+        public void Set(int percentage)
+        {
+            if (percentage < 0 || percentage > 100)
+                throw new ArgumentException("The value for percentage must be between 0 and 100");
 
-        void Set(int percentage);
+            NativeSet(percentage);
+        }
     }
 }
