@@ -3,22 +3,27 @@ using Android.Media;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Droid;
 
-namespace Volume
+namespace Volume.Droid
 {
     public sealed class VolumeService : BaseVolumeService
     {
-        internal static void Initialize()
-            => Mvx.RegisterSingleton<IVolumeService>(new VolumeService());
+        private readonly VolumeNotificationFlags _notificationFlags;
 
-        private VolumeService() { }
+        internal static void Initialize(VolumeNotificationFlags notificationFlags)
+            => Mvx.RegisterSingleton<IVolumeService>(new VolumeService(notificationFlags));
+
+        private VolumeService(VolumeNotificationFlags notificationFlags)
+        {
+            _notificationFlags = notificationFlags;
+        }
 
         protected override void NativeSet(int percentage)
         {
             var context = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext;
             var audioManager = context.GetSystemService(Context.AudioService) as AudioManager;
-
             var maxVolume = audioManager.GetStreamMaxVolume(Stream.Music);
-            audioManager.SetStreamVolume(Stream.Music, maxVolume, VolumeNotificationFlags.ShowUi);
+            var volume = (maxVolume / 100.0f) * percentage;
+            audioManager.SetStreamVolume(Stream.Music, (int)volume, _notificationFlags);
         }
     }
 }
