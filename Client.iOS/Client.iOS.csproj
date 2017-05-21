@@ -136,10 +136,6 @@
     <Compile Include="Bootstrap\VolumeScanPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
-      <Project>{A68A5CF8-5814-430B-84F1-3F9537F8A593}</Project>
-      <Name>Client.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Volume\Volume.csproj">
       <Project>{1E2982B8-7902-41DB-A08F-B3F41AE8862F}</Project>
       <Name>Volume</Name>
@@ -147,6 +143,10 @@
     <ProjectReference Include="..\Volume.iOS\Volume.iOS.csproj">
       <Project>{E22C3536-4190-4CC4-A1A6-A12DA561A145}</Project>
       <Name>Volume.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
+      <Project>{A68A5CF8-5814-430B-84F1-3F9537F8A593}</Project>
+      <Name>Client.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

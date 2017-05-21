@@ -105,10 +105,6 @@
     <Folder Include="Bootstrap\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
-      <Project>{A68A5CF8-5814-430B-84F1-3F9537F8A593}</Project>
-      <Name>Client.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Volume\Volume.csproj">
       <Project>{1E2982B8-7902-41DB-A08F-B3F41AE8862F}</Project>
       <Name>Volume</Name>
@@ -116,6 +112,10 @@
     <ProjectReference Include="..\Volume.Droid\Volume.Droid.csproj">
       <Project>{493FB499-86C2-4B19-B42B-94BA9F7F65FC}</Project>
       <Name>Volume.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.Core\Client.Core.csproj">
+      <Project>{A68A5CF8-5814-430B-84F1-3F9537F8A593}</Project>
+      <Name>Client.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
