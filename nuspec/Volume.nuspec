@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Mvx.Volume</id>
+        <version>1.0.0</version>
+        <authors>William Barbosa</authors>
+        <projectUrl>https://github.com/willsb/Mvx.Volume</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/willsb/Mvx.Volume/master/nuspec/Icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description> MvvmCross Plugin to handle the device's volume </description>
+        <copyright />
+        <language />
+        <tags>mvvm mvvmcross xamarin monodroid mvx volume mute volume-controls</tags>
+        <dependencies>
+            <dependency id="MvvmCross.Platform" version="4.4.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="../build/content/*.*" target="lib" />
+        <file src="../build/lib/*.*" target="lib" />
+    </files>
+</package>
